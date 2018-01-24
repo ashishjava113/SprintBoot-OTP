@@ -76,12 +76,12 @@ public class OtpController {
 			if(serverOtp > 0){
 				if(otpnum == serverOtp){
 					otpService.clearOTP(username);
-					return ("Entered Otp is valid");
+					return SUCCESS;
 				}else{
-					return SUCCESS;	
+					return FAIL;	
 				}
 			}else {
-				return FAIL;			
+				return "INTERNAL ERROR: Server OTP is less than 0";			
 			}
 		}else {
 			return FAIL;	
